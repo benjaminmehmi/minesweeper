@@ -1,0 +1,88 @@
+body{
+  margin:0;
+  background:#ffffff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 2px;
+    width: 302px;
+    height: 302px;
+    margin: 0 auto 0 auto;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #9a9a9a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #606060;
+}
+
+.cell.open {
+    background-color: #ddd;
+}
+
+.cell.open:after {
+    content: attr(data-content);
+    display: block;
+    text-align: center;
+}
+
+.cell.open[data-content="💣"] {
+    color: red;
+}
+
+.status.message {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #333;
+
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    min-width: 90px;
+}
+
+.button.group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+.flag.button, .restart.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.flag.button:hover, .restart.button:hover {
+    background-color: #d0d0d0;
+}
+
+.flag.button:active, .restart.button:active {
+    background-color: #c0c0c0;
+}
